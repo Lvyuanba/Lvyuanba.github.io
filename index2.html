@@ -102,9 +102,13 @@
 							<span>请假开始时间：2021-08-27 12:00</span>
 							<span>请假结束时间：2021-08-28 20:00</span>
 							<div class="datebox">
-								<span class="date">2021-08-27 09:45:40</span>
+								<span class="date" id="submitTime"></span>
 
 								<span class="status">已通过</span>
+								
+								<!--<span class="date">2021-08-27 09:45:40</span>
+
+								<span class="status">已通过</span>-->
 
 							</div>
 						</div>
@@ -183,6 +187,16 @@
 					$($(this).attr("href")).show().siblings('.weui-tab__content').hide();
 				});
 			});
+			function starttime(){
+	var date = new Date();
+	var years = date.getFullYear();
+	var month = date.getMonth()+1;
+	var days = date.getDate();
+	document.getElementById("startTime").innerHTML  = "请假开始时间："+years+"-0"+month+"-"+days + ' 10时';
+	document.getElementById("endTime").innerHTML  = "请假结束时间："+years+"-0"+month+"-"+days + ' 21时';
+	document.getElementById("submitTime").innerHTML  = years+"-0"+month+"-"+days + ' 10:01:29';
+	};
+	setInterval("starttime()");
 		</script>
 		<div class="weui-gallery" style="display: none">
 			<span class="weui-gallery__img"></span>
